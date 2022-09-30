@@ -10,3 +10,12 @@ data "external" "workspace_id" {
 output "workspace_id" {
   value = data.external.workspace_id.result.id
 }
+
+variable "IC_SCHEMATICS_WORKSPACE_ID" {
+  default = ""
+  description = "leave blank if running locally. This variable will be automatically populated if running from an IBM Cloud Schematics workspace"
+}
+
+output "workspace_id2" {
+  value = var.IC_SCHEMATICS_WORKSPACE_ID
+}
